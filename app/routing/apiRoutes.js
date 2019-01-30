@@ -1,14 +1,13 @@
 var friendData = require('../data/friend.js');
 
-
 module.exports = function (app) {
 
-	app.get('/api/friend', function(req, res){
+
+//GET/POST ROUTES
+	app.get('/api/friend,js', function(req, res){
 		res.json(friendData);
-	})
-
-
-	app.post('/api/friend', function(req, res){
+	});
+	app.post('/api/friend.js', function(req, res){
 		var newFriend = req.body;
 
 		for(var i = 0; i < newFriend.scores.length; i++) {
@@ -49,5 +48,5 @@ module.exports = function (app) {
 		friendData.push(newFriend);
 
 		res.json(friendData[bestFriendIndex]);
-	})
+	});
 }
